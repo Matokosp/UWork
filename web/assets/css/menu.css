@@ -1,0 +1,176 @@
+/* MENU */
+
+/* hamburger menu icon */
+
+.menu_responsive-hide {
+	transition: 0.5s;
+	opacity: 0;
+  	transform: translateY(-60px);
+}
+
+.menu_responsive-show {
+	transition: 0.5s;
+  	top: 0px;
+}
+
+.hamburger_div {
+  z-index: 99;
+  background-color: #005869;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+.hamburger_logo {
+  width: 80px;
+}
+
+.hamburger {
+  display: block;
+  top: 15px;
+  left: 15px;
+  position: absolute;
+}
+
+.hamburger_icon {
+  width: 36px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+/* Hamburger icons animation */
+
+.hamburger_icon_one {
+  transform-origin: center center;
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.hamburger_icon_two {
+  opacity: 0;
+}
+
+.hamburger_icon_three {
+  transform-origin: center center;
+  transform: rotate(-45deg) translateY(-6px) translateX(6px);
+}
+
+/* menu hidden */
+
+.menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  background-color: #005869;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100vw);
+  transition: 0.4s;
+}
+
+/* menu show */
+
+.menu_show {
+  transform: translateX(0vw);
+}
+
+.menu-link {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin: 25px 0;
+}
+
+.ig_menu {
+  width: 30px;
+}
+
+@media screen and (min-width: 1000px) {
+
+/* MENU */
+
+.laptop_menu_logo_div {
+    position: fixed;
+    width: 250px;
+    z-index: 99;
+    left: 10vw;
+    top: 30px;
+    transition: 0.4s;
+  }
+
+  .logo-small {
+    width: 85px;
+    top: 15px;
+  }
+
+  .laptop_menu_logo {
+    width: 100%;
+    position: absolute;
+    transition: 0.4s;
+  }
+
+  .logo-hide {
+    opacity: 0;
+  }
+
+  .hamburger_div {
+    display: none;
+  }
+
+  .menu {
+    background-color: transparent;
+    transform: translateX(0);
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 150px;
+    padding: 0 10vw 0 30vw;
+    width: 100vw;
+    transition: 0.4s;
+    background-color: rgba(0,88,105,0.5);
+  }
+
+  .menu-scroll {
+    background-color: #F2F2F2;
+    height: 80px;
+    padding: 0 20vw 0 30vw;
+  }
+
+  .menu-link {
+    font-weight: 400;
+    text-align: center;
+    width: 30%;
+    font-size: 1rem;
+    transition: 0.4s;
+    display: inline-block;
+  }
+
+  .menu-link span {
+    background-color: #F9A12C;
+    padding: 5px 15px;
+    border-radius: 20px;
+  }
+
+  .menu-link-scroll {
+    color: #3E3F3C;
+  }
+
+  .menu-active {
+    color: #718696;
+    font-weight: 600;
+  }
+
+  .menu_small {
+    padding: 0 15vw;
+    width: 70vw;
+    height: 60px;
+  }
+
+}
