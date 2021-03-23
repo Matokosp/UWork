@@ -43,3 +43,45 @@ window.addEventListener('click', function(e){
     }
     console.log(e.target)
 })
+
+var x = window.matchMedia("(min-width: 1000px)")
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+
+    let tabItem = $('.tab-item');
+    let tabAttr = tabItem.attr('tab');
+
+    $( document ).ready(function() {
+        $('.tab-item').children('img:nth-child(1)').removeClass('tab-icon-show')
+        $('.tab-item:nth-child(1)').children('img:nth-child(1)').addClass('tab-icon-show')
+        $('.car-slide:nth-child(1)').addClass('car-slide-show')
+        $('.tab-item:nth-child(1)').children('.tab-item-border').addClass('tab-item-border-color')
+        $('.tab-item:nth-child(1)').children('.slide-icon-text').addClass('slide-icon-text-color')
+
+    });
+
+    tabItem.on('mouseenter', function(){
+        let attr = $(this).attr('tab');
+
+        tabItem.children('img').removeClass('tab-icon-show')
+        $(this).children('img:nth-child(1)').addClass('tab-icon-show')
+        $('.car-slide').removeClass('car-slide-show')
+        $('.tab-slide-'+attr+'').addClass('car-slide-show')
+        $('.tab-item-border').removeClass('tab-item-border-color')
+        $(this).children('.tab-item-border').addClass('tab-item-border-color')
+        $('.slide-icon-text').removeClass('slide-icon-text-color')
+        $(this).children('.slide-icon-text').addClass('slide-icon-text-color')
+
+    })
+
+    // tabItem.on('mouseleave', function(){
+    //     $(this).children('img:nth-child(1)').removeClass('tab-icon-show')
+    // })
+
+  }
+}
+
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
