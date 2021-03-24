@@ -87,6 +87,12 @@
   letter-spacing: 2px;
   font-weight: 300;
   margin: 25px 0;
+  transition:0.4s
+}
+
+.menu-link:hover {
+  color: #fff;
+  transform: scale(1.06);
 }
 
 .ig_menu {
@@ -146,13 +152,11 @@
   .menu-link {
     font-weight: 400;
     text-align: center;
-    width: 30%;
-    font-size: 1rem;
+    width: 20%;
+    margin: 0 4%;
+    font-size: 0.8rem;
     transition: 0.4s;
     display: inline-block;
-  }
-
-  .menu-link span {
     background-color: #F9A12C;
     padding: 5px 15px;
     border-radius: 20px;

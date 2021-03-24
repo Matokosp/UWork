@@ -44,6 +44,16 @@ window.addEventListener('click', function(e){
     console.log(e.target)
 })
 
+
+// FAQ SHOW ANSWERS
+
+let faqTitle = $('.faq-title');
+
+faqTitle.on('click', function() {
+    $(this).children('img').toggleClass('faq-title-img-rotate');
+    $(this).siblings('.faq-answer').toggleClass('faq-answer-show');
+})
+
 var x = window.matchMedia("(min-width: 1000px)")
 
 function myFunction(x) {
