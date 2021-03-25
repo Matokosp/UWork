@@ -62,6 +62,8 @@ function myFunction(x) {
     let tabItem = $('.tab-item');
     let tabAttr = tabItem.attr('tab');
 
+    let tabArrow = $('.car-slide-arrow');
+
     $( document ).ready(function() {
         $('.tab-item').children('img:nth-child(1)').removeClass('tab-icon-show')
         $('.tab-item:nth-child(1)').children('img:nth-child(1)').addClass('tab-icon-show')
@@ -71,23 +73,34 @@ function myFunction(x) {
 
     });
 
-    tabItem.on('mouseenter', function(){
+    tabItem.on('mouseenter', function() {
         let attr = $(this).attr('tab');
 
         tabItem.children('img').removeClass('tab-icon-show')
         $(this).children('img:nth-child(1)').addClass('tab-icon-show')
         $('.car-slide').removeClass('car-slide-show')
         $('.tab-slide-'+attr+'').addClass('car-slide-show')
+
         $('.tab-item-border').removeClass('tab-item-border-color')
         $(this).children('.tab-item-border').addClass('tab-item-border-color')
         $('.slide-icon-text').removeClass('slide-icon-text-color')
         $(this).children('.slide-icon-text').addClass('slide-icon-text-color')
-
     })
 
-    // tabItem.on('mouseleave', function(){
-    //     $(this).children('img:nth-child(1)').removeClass('tab-icon-show')
-    // })
+    tabArrow.on('click', function() {
+
+        let arrowTabAttr = $(this).attr('arrow');
+
+        tabItem.children('img').removeClass('tab-icon-show');
+        $('#tab'+arrowTabAttr+'').children('img:nth-child(1)').addClass('tab-icon-show')
+        $('.tab-item-border').removeClass('tab-item-border-color')
+        $('#tab'+arrowTabAttr+'').children('.tab-item-border').addClass('tab-item-border-color')
+        $('.slide-icon-text').removeClass('slide-icon-text-color')
+        $('#tab'+arrowTabAttr+'').children('.slide-icon-text').addClass('slide-icon-text-color')
+
+        $('.car-slide').removeClass('car-slide-show')
+        $('.tab-slide-'+arrowTabAttr+'').addClass('car-slide-show')
+    })
 
   }
 }
